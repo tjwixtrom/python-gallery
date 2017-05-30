@@ -1,0 +1,245 @@
+
+
+.. _sphx_glr_examples_GFS_Widget.py:
+
+
+===============================
+Jupyter Notebook Widget Example
+===============================
+
+An example of using widgets in a Jupyter Notebook.
+
+This example is only intended to be run in a Jupyter Notebook running a Python
+kernel as it displays the ability to use widgets and make an interactive plot.
+The interactive plot has the ability to display three different variables, a couple
+of different times, and use four different color maps.
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out::
+
+    {'OPENDAP': 'http://thredds.ucar.edu/thredds/dodsC/grib/NCEP/GFS/Global_0p5deg/Best', 'WCS': 'http://thredds.ucar.edu/thredds/wcs/grib/NCEP/GFS/Global_0p5deg/Best', 'WMS': 'http://thredds.ucar.edu/thredds/wms/grib/NCEP/GFS/Global_0p5deg/Best', 'NetcdfSubset': 'http://thredds.ucar.edu/thredds/ncss/grib/NCEP/GFS/Global_0p5deg/Best', 'CdmRemote': 'http://thredds.ucar.edu/thredds/cdmremote/grib/NCEP/GFS/Global_0p5deg/Best', 'NCML': 'http://thredds.ucar.edu/thredds/ncml/grib/NCEP/GFS/Global_0p5deg/Best', 'UDDC': 'http://thredds.ucar.edu/thredds/uddc/grib/NCEP/GFS/Global_0p5deg/Best', 'ISO': 'http://thredds.ucar.edu/thredds/iso/grib/NCEP/GFS/Global_0p5deg/Best'}
+    ['Relative_humidity_entire_atmosphere_single_layer', 'reftime1', 'time1', 'lat', 'lon', 'Temperature_surface', 'Wind_speed_gust_surface']
+    [0;31m[0m
+    [0;31mSphinxWarning[0mTraceback (most recent call last)
+    [0;32m/home/travis/miniconda/envs/gallery/lib/python3.6/site-packages/IPython/core/formatters.py[0m in [0;36m__call__[0;34m(self, obj)[0m
+    [1;32m    874[0m             [0mmethod[0m [0;34m=[0m [0mget_real_method[0m[0;34m([0m[0mobj[0m[0;34m,[0m [0mself[0m[0;34m.[0m[0mprint_method[0m[0;34m)[0m[0;34m[0m[0m
+    [1;32m    875[0m             [0;32mif[0m [0mmethod[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0m
+    [0;32m--> 876[0;31m                 [0mmethod[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0m
+    [0m[1;32m    877[0m                 [0;32mreturn[0m [0;32mTrue[0m[0;34m[0m[0m
+    [1;32m    878[0m [0;34m[0m[0m
+
+    [0;32m/home/travis/miniconda/envs/gallery/lib/python3.6/site-packages/ipywidgets/widgets/widget.py[0m in [0;36m_ipython_display_[0;34m(self, **kwargs)[0m
+    [1;32m    502[0m             [0;31m# widget front-end is what is expected.[0m[0;34m[0m[0;34m[0m[0m
+    [1;32m    503[0m             [0;32mif[0m [0mvalidated[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0m
+    [0;32m--> 504[0;31m                 loud_error('Widget Javascript not detected.  It may not be '
+    [0m[1;32m    505[0m                            'installed or enabled properly.')
+    [1;32m    506[0m             [0;32melif[0m [0;32mnot[0m [0mvalidated[0m[0;34m:[0m[0;34m[0m[0m
+
+    [0;32m/home/travis/miniconda/envs/gallery/lib/python3.6/site-packages/ipywidgets/widgets/widget.py[0m in [0;36mloud_error[0;34m(message)[0m
+    [1;32m    492[0m         [0;34m"""Called when `IPython.display.display` is called on the widget."""[0m[0;34m[0m[0m
+    [1;32m    493[0m         [0;32mdef[0m [0mloud_error[0m[0;34m([0m[0mmessage[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0m
+    [0;32m--> 494[0;31m             [0mself[0m[0;34m.[0m[0mlog[0m[0;34m.[0m[0mwarn[0m[0;34m([0m[0mmessage[0m[0;34m)[0m[0;34m[0m[0m
+    [0m[1;32m    495[0m             [0msys[0m[0;34m.[0m[0mstderr[0m[0;34m.[0m[0mwrite[0m[0;34m([0m[0;34m'%s\n'[0m [0;34m%[0m [0mmessage[0m[0;34m)[0m[0;34m[0m[0m
+    [1;32m    496[0m [0;34m[0m[0m
+
+    [0;32m/home/travis/miniconda/envs/gallery/lib/python3.6/logging/__init__.py[0m in [0;36mwarn[0;34m(self, msg, *args, **kwargs)[0m
+    [1;32m   1321[0m         warnings.warn("The 'warn' method is deprecated, "
+    [1;32m   1322[0m             "use 'warning' instead", DeprecationWarning, 2)
+    [0;32m-> 1323[0;31m         [0mself[0m[0;34m.[0m[0mwarning[0m[0;34m([0m[0mmsg[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0m
+    [0m[1;32m   1324[0m [0;34m[0m[0m
+    [1;32m   1325[0m     [0;32mdef[0m [0merror[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mmsg[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0m
+
+    [0;32m/home/travis/miniconda/envs/gallery/lib/python3.6/logging/__init__.py[0m in [0;36mwarning[0;34m(self, msg, *args, **kwargs)[0m
+    [1;32m   1316[0m         """
+    [1;32m   1317[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0misEnabledFor[0m[0;34m([0m[0mWARNING[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0m
+    [0;32m-> 1318[0;31m             [0mself[0m[0;34m.[0m[0m_log[0m[0;34m([0m[0mWARNING[0m[0;34m,[0m [0mmsg[0m[0;34m,[0m [0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0m
+    [0m[1;32m   1319[0m [0;34m[0m[0m
+    [1;32m   1320[0m     [0;32mdef[0m [0mwarn[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mmsg[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0m
+
+    [0;32m/home/travis/miniconda/envs/gallery/lib/python3.6/logging/__init__.py[0m in [0;36m_log[0;34m(self, level, msg, args, exc_info, extra, stack_info)[0m
+    [1;32m   1440[0m         record = self.makeRecord(self.name, level, fn, lno, msg, args,
+    [1;32m   1441[0m                                  exc_info, func, extra, sinfo)
+    [0;32m-> 1442[0;31m         [0mself[0m[0;34m.[0m[0mhandle[0m[0;34m([0m[0mrecord[0m[0;34m)[0m[0;34m[0m[0m
+    [0m[1;32m   1443[0m [0;34m[0m[0m
+    [1;32m   1444[0m     [0;32mdef[0m [0mhandle[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mrecord[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0m
+
+    [0;32m/home/travis/miniconda/envs/gallery/lib/python3.6/logging/__init__.py[0m in [0;36mhandle[0;34m(self, record)[0m
+    [1;32m   1450[0m         """
+    [1;32m   1451[0m         [0;32mif[0m [0;34m([0m[0;32mnot[0m [0mself[0m[0;34m.[0m[0mdisabled[0m[0;34m)[0m [0;32mand[0m [0mself[0m[0;34m.[0m[0mfilter[0m[0;34m([0m[0mrecord[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0m
+    [0;32m-> 1452[0;31m             [0mself[0m[0;34m.[0m[0mcallHandlers[0m[0;34m([0m[0mrecord[0m[0;34m)[0m[0;34m[0m[0m
+    [0m[1;32m   1453[0m [0;34m[0m[0m
+    [1;32m   1454[0m     [0;32mdef[0m [0maddHandler[0m[0;34m([0m[0mself[0m[0;34m,[0m [0mhdlr[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0m
+
+    [0;32m/home/travis/miniconda/envs/gallery/lib/python3.6/logging/__init__.py[0m in [0;36mcallHandlers[0;34m(self, record)[0m
+    [1;32m   1512[0m                 [0mfound[0m [0;34m=[0m [0mfound[0m [0;34m+[0m [0;36m1[0m[0;34m[0m[0m
+    [1;32m   1513[0m                 [0;32mif[0m [0mrecord[0m[0;34m.[0m[0mlevelno[0m [0;34m>=[0m [0mhdlr[0m[0;34m.[0m[0mlevel[0m[0;34m:[0m[0;34m[0m[0m
+    [0;32m-> 1514[0;31m                     [0mhdlr[0m[0;34m.[0m[0mhandle[0m[0;34m([0m[0mrecord[0m[0;34m)[0m[0;34m[0m[0m
+    [0m[1;32m   1515[0m             [0;32mif[0m [0;32mnot[0m [0mc[0m[0;34m.[0m[0mpropagate[0m[0;34m:[0m[0;34m[0m[0m
+    [1;32m   1516[0m                 [0mc[0m [0;34m=[0m [0;32mNone[0m    [0;31m#break out[0m[0;34m[0m[0m
+
+    [0;32m/home/travis/miniconda/envs/gallery/lib/python3.6/logging/__init__.py[0m in [0;36mhandle[0;34m(self, record)[0m
+    [1;32m    857[0m         [0memission[0m[0;34m.[0m[0;34m[0m[0m
+    [1;32m    858[0m         """
+    [0;32m--> 859[0;31m         [0mrv[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0mfilter[0m[0;34m([0m[0mrecord[0m[0;34m)[0m[0;34m[0m[0m
+    [0m[1;32m    860[0m         [0;32mif[0m [0mrv[0m[0;34m:[0m[0;34m[0m[0m
+    [1;32m    861[0m             [0mself[0m[0;34m.[0m[0macquire[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0m
+
+    [0;32m/home/travis/miniconda/envs/gallery/lib/python3.6/logging/__init__.py[0m in [0;36mfilter[0;34m(self, record)[0m
+    [1;32m    716[0m         [0;32mfor[0m [0mf[0m [0;32min[0m [0mself[0m[0;34m.[0m[0mfilters[0m[0;34m:[0m[0;34m[0m[0m
+    [1;32m    717[0m             [0;32mif[0m [0mhasattr[0m[0;34m([0m[0mf[0m[0;34m,[0m [0;34m'filter'[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0m
+    [0;32m--> 718[0;31m                 [0mresult[0m [0;34m=[0m [0mf[0m[0;34m.[0m[0mfilter[0m[0;34m([0m[0mrecord[0m[0;34m)[0m[0;34m[0m[0m
+    [0m[1;32m    719[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0m
+    [1;32m    720[0m                 [0mresult[0m [0;34m=[0m [0mf[0m[0;34m([0m[0mrecord[0m[0;34m)[0m [0;31m# assume callable - will raise if not[0m[0;34m[0m[0m
+
+    [0;32m/home/travis/miniconda/envs/gallery/lib/python3.6/site-packages/sphinx/util/logging.py[0m in [0;36mfilter[0;34m(self, record)[0m
+    [1;32m    335[0m                 [0;32mraise[0m [0mSphinxWarning[0m[0;34m([0m[0mlocation[0m [0;34m+[0m [0;34m":"[0m [0;34m+[0m [0mrecord[0m[0;34m.[0m[0mmsg[0m [0;34m%[0m [0mrecord[0m[0;34m.[0m[0margs[0m[0;34m)[0m[0;34m[0m[0m
+    [1;32m    336[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0m
+    [0;32m--> 337[0;31m                 [0;32mraise[0m [0mSphinxWarning[0m[0;34m([0m[0mrecord[0m[0;34m.[0m[0mmsg[0m [0;34m%[0m [0mrecord[0m[0;34m.[0m[0margs[0m[0;34m)[0m[0;34m[0m[0m
+    [0m[1;32m    338[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0m
+    [1;32m    339[0m             [0;32mreturn[0m [0;32mTrue[0m[0;34m[0m[0m
+
+    [0;31mSphinxWarning[0m: Widget Javascript not detected.  It may not be installed or enabled properly.
+    <ipywidgets.widgets.interaction.interactive at 0x2ade93294860>
+
+
+
+
+|
+
+
+.. code-block:: python
+
+    from datetime import datetime, timedelta
+
+    import cartopy.crs as ccrs
+    import cartopy.feature as cfeature
+    from IPython.display import display
+    import ipywidgets as widgets
+    import matplotlib.pyplot as plt
+    from metpy.units import units
+    from netCDF4 import num2date
+    import numpy as np
+    from siphon.catalog import TDSCatalog
+    from siphon.ncss import NCSS
+
+
+    # Request the GFS data from the thredds server
+    gfs = TDSCatalog('http://thredds.ucar.edu/thredds/catalog/grib/'
+                     'NCEP/GFS/Global_0p5deg/catalog.xml')
+    dataset = list(gfs.datasets.values())[1]
+    print(dataset.access_urls)
+
+    # Create NCSS object to access the NetcdfSubset
+    ncss = NCSS(dataset.access_urls['NetcdfSubset'])
+
+    # get current date and time
+    now = datetime.utcnow()
+    now = datetime(now.year, now.month, now.day, now.hour)
+
+    # define time range you want the data for
+    start = now
+    end = now + timedelta(hours=12)
+
+    query = ncss.query()
+    query.time_range(start, end)
+    query.lonlat_box(north=60, south=20, east=310, west=230)
+    query.accept('netcdf4')
+    query.variables('Temperature_surface', 'Relative_humidity_entire_atmosphere_single_layer',
+                    'Wind_speed_gust_surface')
+
+
+    # Helper function for finding proper time variable
+    def find_time_var(var, time_basename='time'):
+        for coord_name in var.coordinates.split():
+            if coord_name.startswith(time_basename):
+                return coord_name
+        raise ValueError('No time variable found for ' + var.name)
+
+
+    # Request data for the variables you want to use
+    data = ncss.get_data(query)
+    print(list(data.variables))
+
+    # Pull out the lat and lon data
+    lat = data.variables['lat'][:]
+    lon = data.variables['lon'][:]
+
+    # Get time into a datetime object
+    time_var = data.variables[find_time_var(data.variables['Temperature_surface'])]
+    time_var = num2date(time_var[:], time_var.units).tolist()
+    time_strings = [t.strftime('%m/%d %H:%M') for t in time_var]
+
+    # Combine 1D latitude and longitudes into a 2D grid of locations
+    lon_2d, lat_2d = np.meshgrid(lon, lat)
+
+
+    def plot(varname='', time=0, colormap=''):
+        variable = data.variables[varname][:]
+        fig = plt.figure(figsize=(10, 8))
+        ax = fig.add_subplot(111, projection=ccrs.PlateCarree())
+        ax.set_extent([235., 290., 20., 55.])
+        ax.set_title('GFS 12-Hour Forecast', size=16)
+
+        # Add state boundaries to plot
+        states_provinces = cfeature.NaturalEarthFeature(category='cultural',
+                                                        name='admin_1_states_provinces_lines',
+                                                        scale='50m', facecolor='none')
+        ax.add_feature(states_provinces, edgecolor='black', linewidth=1)
+
+        # Add country borders to plot
+        country_borders = cfeature.NaturalEarthFeature(category='cultural',
+                                                       name='admin_0_countries',
+                                                       scale='50m', facecolor='none')
+        ax.add_feature(country_borders, edgecolor='black', linewidth=1)
+
+        if varname == 'Temperature_surface':
+            variable = (variable * units.kelvin).to('degF')
+
+        # Contour based on variable chosen
+        c = ax.contourf(lon_2d, lat_2d, variable[time_strings.index(time)], cmap=colormap)
+        cb = fig.colorbar(c, ax=ax, shrink=0.7)
+
+        if varname == 'Temperature_surface':
+            cb.set_label(r'$^{o}F$', size='large')
+        if varname == 'Relative_humidity_entire_atmosphere_single_layer':
+            cb.set_label(r'$\%$', size='large')
+        if varname == 'Wind_speed_gust_surface':
+            cb.set_label(r'$m/s$', size='large')
+
+
+    var_widget = widgets.Dropdown(
+        options={'Temperature': 'Temperature_surface',
+                 'Relative Humidity': 'Relative_humidity_entire_atmosphere_single_layer',
+                 'Wind Speed': 'Wind_speed_gust_surface'},
+        description='Variable', alignment='center')
+    time_widget = widgets.SelectionSlider(description='Time', options=time_strings, width='40%')
+    colormap_widget = widgets.RadioButtons(description='Colormap',
+                                           options=['viridis', 'coolwarm', 'YlGnBu', 'RdPu'])
+    x = widgets.interactive(plot, varname=var_widget, time=time_widget, colormap=colormap_widget)
+    display(x)
+
+**Total running time of the script:** ( 0 minutes  1.485 seconds)
+
+
+
+.. container:: sphx-glr-footer
+
+
+  .. container:: sphx-glr-download
+
+     :download:`Download Python source code: GFS_Widget.py <GFS_Widget.py>`
+
+
+
+  .. container:: sphx-glr-download
+
+     :download:`Download Jupyter notebook: GFS_Widget.ipynb <GFS_Widget.ipynb>`
+
+.. rst-class:: sphx-glr-signature
+
+    `Generated by Sphinx-Gallery <https://sphinx-gallery.readthedocs.io>`_
